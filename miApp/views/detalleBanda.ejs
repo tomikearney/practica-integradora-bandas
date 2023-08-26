@@ -5,11 +5,26 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Welcome to <%= title %></h1>
+    <!--Se muestran todos los datos de la banda (punto: i)-->
     <% for( let i = 0; i < infoBanda.length; i++ ) { %>
-      <p><%= infoBanda[i].nombre %></p>
-    <% } %>
+      <p>Nombre: <%= infoBanda[i].nombre %>, </p>
+      <p>Integrantes: <%= infoBanda[i].integrantes %>, </p>
+
+      <p>Genero: <a href="/bandas/<%= infoBanda[i].genero %>"><%= infoBanda[i].genero %></a></p>
+
+      <p>Top Canciones: <%= infoBanda[i].topCanciones %>, </p>
+
+      <p class="imgCover">Cover: <a href="/bandas/<%= infoBanda[i].cover %>">
+        <img src="/<%= infoBanda[i].cover %>" alt="<%= infoBanda[i].nombre %>">
+      </a> </p>
+      <p>Id: <%= infoBanda[i].id %>, </p>
+
+      <p>Video: <a href="<%= infoBanda[i].video%>"> <%= infoBanda[i].video%></a></p>
+      <!-- <iframe src="<%= infoBanda[i].video%>" frameborder="0"></iframe> -->
+
+      <% } %>
     
+   
   </body>
 </html>

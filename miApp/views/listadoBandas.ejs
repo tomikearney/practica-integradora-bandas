@@ -7,11 +7,15 @@
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-    <% for( let i = 0; i < lista.length; i++ ) { %>
-        <h1><%= lista[i].nombre %></h1>
-        
-        
-      <% } %>
-    
+    <ol>
+      <% for( let i = 0; i < lista.length; i++ ) { %>
+          <li>
+            <h2>Nombre: <%= lista[i].nombre%></h2>
+            <a href="/bandas/<%= lista[i].id %>">
+              <img src="/<%= lista[i].cover %>" alt="<%= lista[i].nombre %>">
+            </a>
+          </li>            
+          <% } %>
+    </ol>
   </body>
 </html>
