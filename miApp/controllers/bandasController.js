@@ -8,28 +8,33 @@ const bandasController = {
     },
 
     //se muestta todos los datos de la banda (punto: i --> LISTO)
-    //FALTA VER EL ii Y iii
+    //FALTA VER EL Y iii
     encuentraId: function (req, res) {
         let ingresoId = req.params.id;
         let arrayBanda = [];
+
         for (let i = 0; i < bandas.lista.length; i++) {
             if (ingresoId == bandas.lista[i].id) {
                 arrayBanda.push(bandas.lista[i]);
-            }
+            }     
         }
+
         return res.render("detalleBanda", {infoBanda: arrayBanda, title: "Detalle de Bandas"})
     }, 
 
     //falta hacer GENERO
     encuentraGenero: function (req, res) {
         let ingresogenero = req.params.genero;
-        let arraygeneros  = []
+        let arrayGeneros  = []
         for (let i = 0; i <  bandas.lista.length ; i++) {
             if (ingresogenero == bandas.lista[i].genero) {
-                arraygeneros.push(bandas.lista[i])    
+                arrayGeneros.push(bandas.lista[i]);   
             }
+            
         }
-        return res.render("Detallegenero",{generos: arraygeneros, title: "detalle de generos "})
+        
+    
+        return res.render("porGeneros", {infoGeneros: arrayGeneros, title: "Bandas por Género "})
 
     },
 

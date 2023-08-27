@@ -11,18 +11,24 @@
       <p>Nombre: <%= infoBanda[i].nombre %>, </p>
       <p>Integrantes: <%= infoBanda[i].integrantes %>, </p>
 
-      <p>Genero: <a href="/bandas/<%= infoBanda[i].genero %>"><%= infoBanda[i].genero %></a></p>
+      <p>Genero:
+        <a href="/bandas/genero/<%= infoBanda[i].genero %>"><%= infoBanda[i].genero %></a>
+      </p>
 
       <p>Top Canciones: <%= infoBanda[i].topCanciones %>, </p>
 
-      <p class="imgCover">Cover: <a href="/bandas/<%= infoBanda[i].cover %>">
-        <img src="/<%= infoBanda[i].cover %>" alt="<%= infoBanda[i].nombre %>">
-      </a> </p>
+      <p>Cover: </p>
+        <!-- <a href="/bandas/<%= infoBanda[i].cover %>"> -->
+        <img class="imgCover" src="/<%= infoBanda[i].cover %>" alt="<%= infoBanda[i].nombre %>">
+        <!-- </a>  -->
+
       <p>Id: <%= infoBanda[i].id %>, </p>
 
-      <p>Video: <a href="<%= infoBanda[i].video%>"> <%= infoBanda[i].video%></a></p>
-      <!-- <iframe src="<%= infoBanda[i].video%>" frameborder="0"></iframe> -->
+      <p>Video: 
+        <a href="<%= infoBanda[i].video%>"> <%= infoBanda[i].video%></a>
+      </p>
 
+      
       <% } %>
     
    
