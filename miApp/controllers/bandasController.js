@@ -19,10 +19,13 @@ const bandasController = {
             }     
         }
 
+        if (!arrayBanda){
+            return res.render("detalleBanda", {title:"Banda no encontrada"});
+        }
+        
         return res.render("detalleBanda", {infoBanda: arrayBanda, title: "Detalle de Bandas"})
     }, 
 
-    //falta hacer GENERO
     encuentraGenero: function (req, res) {
         let ingresogenero = req.params.genero;
         let arrayGeneros  = []
@@ -33,7 +36,6 @@ const bandasController = {
             
         }
         
-    
         return res.render("porGeneros", {infoGeneros: arrayGeneros, title: "Bandas por Género "})
 
     },
