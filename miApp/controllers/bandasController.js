@@ -22,6 +22,14 @@ const bandasController = {
 
     //falta hacer GENERO
     encuentraGenero: function (req, res) {
+        let ingresogenero = req.params.genero;
+        let arraygeneros  = []
+        for (let i = 0; i <  bandas.lista.length ; i++) {
+            if (ingresogenero == bandas.lista[i].genero) {
+                arraygeneros.push(bandas.lista[i])    
+            }
+        }
+        return res.render("Detallegenero",{generos: arraygeneros, title: "detalle de generos "})
 
     },
 
