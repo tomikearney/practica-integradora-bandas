@@ -1,41 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
 
-    <%if (infoBanda.length ===0) {%>
-      <h1><p>La banda que estás buscando no se encuentra en nuestra base de datos.</p>
-      </h1>
-    
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <!--Validación del id -->
+  <%if (infoBanda.length===0) {%>
+    <h1>
+      <p>La banda que estás buscando no se encuentra en nuestra base de datos.</p>
+    </h1>
+
     <% }else { %>
 
-      <% for( let i = 0; i < infoBanda.length; i++ ) { %>
-        <h1>Welcome to <%= title %></h1>
+      <% for( let i=0; i < infoBanda.length; i++ ) { %>
+        <h1>Welcome to <%= title %>
+        </h1>
 
         <p>Nombre: <%= infoBanda[i].nombre %>, </p>
         <p>Integrantes: <%= infoBanda[i].integrantes %>, </p>
-  
+
         <p>Genero:
-          <a href="/bandas/genero/<%= infoBanda[i].genero %>"><%= infoBanda[i].genero %></a>
-        </p>
-  
-        <p>Top Canciones: <%= infoBanda[i].topCanciones %>, </p>
-  
-        <p>Cover: </p>
-          <!-- <a href="/bandas/<%= infoBanda[i].cover %>"> -->
-          <img class="imgCover" src="/<%= infoBanda[i].cover %>" alt="<%= infoBanda[i].nombre %>">
-          <!-- </a>  -->
-  
-        <p>Id: <%= infoBanda[i].id %>, </p>
-  
-        <p>Video: 
-          <a href="<%= infoBanda[i].video%>"> <%= infoBanda[i].video%></a>
+          <a href="/bandas/genero/<%= infoBanda[i].genero %>">
+            <%= infoBanda[i].genero %>
+          </a>
         </p>
 
-        <% } %>  
-    <% } %>
-  </body>
+        <p>Top Canciones: <%= infoBanda[i].topCanciones %>, </p>
+
+        <p>Cover: </p>
+        <img class="imgCover" src="/<%= infoBanda[i].cover %>" alt="<%= infoBanda[i].nombre %>">
+
+        <p>Id: <%= infoBanda[i].id %>, </p>
+
+        <p>Video:
+          <a href="<%= infoBanda[i].video%>">
+            <%= infoBanda[i].video%>
+          </a>
+        </p>
+
+        <% } %>
+          <% } %>
+</body>
+
 </html>

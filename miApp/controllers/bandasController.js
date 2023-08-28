@@ -3,12 +3,9 @@ const bandas = require("../db/bandas")
 const bandasController = {
     //me da el listado completo de bandas
     index: function (req, res) {
-        // const propiedadesBandas = ["nombre", "integrantes", "genero", "topCanciones", "cover", "id", "video"]
-        return res.render("listadoBandas", {lista: bandas.lista, title: "Listado Bandas", /**propiedades: propiedadesBandas**/})
+        return res.render("listadoBandas", {lista: bandas.lista, title: "Listado Bandas"})
     },
 
-    //se muestta todos los datos de la banda (punto: i --> LISTO)
-    //FALTA VER EL Y iii
     encuentraId: function (req, res) {
         let ingresoId = req.params.id;
         let arrayBanda = [];
@@ -36,6 +33,10 @@ const bandasController = {
             
         }
         
+        if (!arrayGeneros) {
+            return res.render("porGeneros", {title:"Genero sin Banda"});
+
+        }
         return res.render("porGeneros", {infoGeneros: arrayGeneros, title: "Bandas por Género "})
 
     },
